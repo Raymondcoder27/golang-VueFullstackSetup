@@ -1,21 +1,21 @@
 import moment from "moment";
 
-export function dateFormat(date:string){
-    if(date==null){
+export function dateFormat(date: string) {
+    if (date == null) {
         return "--"
     }
     return moment(date).format("DD-MM-YYYY")
 }
 
-export function dateTimeFormat(date:string){
-    if(date==null){
+export function dateTimeFormat(date: string) {
+    if (date == null) {
         return "--"
     }
     return moment(date).format("DD-MM-YYYY HH:mm:ss")
 }
 
-export function timeLapse(date:string){
-    if(date==null){
+export function timeLapse(date: string) {
+    if (date == null) {
         return "--"
     }
 
@@ -27,37 +27,37 @@ export function timeLapse(date:string){
     let duration = 0
     let lapse = ""
 
-    if(elapsedDuration.asSeconds() < 60){
+    if (elapsedDuration.asSeconds() < 60) {
         duration = Math.floor(elapsedDuration.asSeconds())
-        lapse = (duration > 1) ? " secs ago":" sec ago"
+        lapse = (duration > 1) ? " secs ago" : " sec ago"
 
         return duration + lapse
     }
 
-    if (elapsedDuration.asMinutes() < 60){
+    if (elapsedDuration.asMinutes() < 60) {
         duration = Math.floor(elapsedDuration.asMinutes())
-        lapse = (duration > 1) ? " mins ago":" min ago"
+        lapse = (duration > 1) ? " mins ago" : " min ago"
 
         return duration + lapse
     }
 
-    if (elapsedDuration.asHours() < 24){
+    if (elapsedDuration.asHours() < 24) {
         duration = Math.floor(elapsedDuration.asHours())
-        lapse = (duration > 1) ? " hrs ago":" hr ago"
+        lapse = (duration > 1) ? " hrs ago" : " hr ago"
 
         return duration + lapse
     }
 
-    if (elapsedDuration.asDays() > 1 && elapsedDuration.asDays() < 7){
+    if (elapsedDuration.asDays() > 1 && elapsedDuration.asDays() < 7) {
         duration = Math.floor(elapsedDuration.asDays())
-        lapse = (duration > 1) ? " days ago":" day ago"
+        lapse = (duration > 1) ? " days ago" : " day ago"
 
         return duration + lapse
     }
 
-    if (elapsedDuration.asWeeks() > 0 && elapsedDuration.asWeeks() < 4){
+    if (elapsedDuration.asWeeks() > 0 && elapsedDuration.asWeeks() < 4) {
         duration = Math.floor(elapsedDuration.asWeeks())
-        lapse = (duration > 1) ? " weeks ago":" week ago"
+        lapse = (duration > 1) ? " weeks ago" : " week ago"
 
         return duration + lapse
     }
