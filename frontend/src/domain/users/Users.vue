@@ -3,9 +3,9 @@
 </script>
 
 <template>
-   <div class="flex">
+  <div class="flex">
     <div class="w-full"></div>
-   </div>
+  </div>
 </template>
 
 <style scoped>
